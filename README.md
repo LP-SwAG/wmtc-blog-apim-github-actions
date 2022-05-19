@@ -8,7 +8,7 @@ This is an example of how you can register and promote APIs with [GitHub Actions
 
 ## See it in action!
 
-You can [see this example in action](https://youtube.com) on YouTube!
+You can [see this example in action](https://youtu.be/Llht1ieNFsw) on YouTube!
 
 ## Example explained
 
