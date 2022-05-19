@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     # only runs against commits to the main branch
     if: github.ref == 'refs/heads/main'
+    environment: development
     steps:
       - uses: actions/checkout@v3
       - uses: jiridj/wm-apigw-actions-register-api@v1
@@ -30,12 +31,14 @@ jobs:
 
   promote-to-staging:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    # only run for tags
+    if: contains(github.ref, 'refs/tags/')
+    environment: staging
     steps:
       - uses: actions/checkout@v3
-      # get the api name and version from the swagger spec
-      # we need to set these as variables to use them as input in the next step
       - id: api-info
+        # get the api name and version from the swagger spec
+        # we need to set these as variables to use them as input in the next step
         run: |
           API_NAME=$(jq '.info.title' swagger.json | tr -d '"')
           API_VERSION=$(jq '.info.version' swagger.json | tr -d '"')
