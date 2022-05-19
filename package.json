@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "version": "cross-var node versioning.js $npm_package_version && git add ."
+    "version": "cross-var node versioning.js $npm_package_version && git add .",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
