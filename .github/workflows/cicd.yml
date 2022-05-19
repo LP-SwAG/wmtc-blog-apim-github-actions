@@ -33,6 +33,8 @@ jobs:
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v3
+      # get the api name and version from the swagger spec
+      # we need to set these as variables to use them as input in the next step
       - id: api-info
         run: |
           API_NAME=$(jq '.info.title' swagger.json | tr -d '"')
