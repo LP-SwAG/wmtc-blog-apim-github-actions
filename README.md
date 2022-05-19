@@ -1,3 +1,3 @@
-# An example for using GitHub Actions with webMethods API Gateway
+# Using GitHub Actions with webMethods API Gateway
 
 todo
