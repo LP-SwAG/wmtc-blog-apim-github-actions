@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const file = 'petstore.swagger.json';
+const file = 'swagger.json';
 const swagger = JSON.parse(fs.readFileSync(file));
 
 const oldVersion = swagger.info.version;
