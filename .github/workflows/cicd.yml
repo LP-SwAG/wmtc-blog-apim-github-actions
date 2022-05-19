@@ -28,12 +28,18 @@ jobs:
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v3
+      - id: api-info
+        run: |
+          API_NAME=$(jq '.info.title' swagger.json | tr -d '"')
+          API_VERSION=$(jq '.info.version' swagger.json | tr -d '"')
+          echo "::set-output name=api-name::${API_NAME}"
+          echo "::set-output name=api-version::${API_VERSION}"
       - uses: jiridj/wm-apigw-actions-promote-api@v1
         with: 
           apigw-url: ${{ secrets.APIGW_URL }}
           apigw-username: ${{ secrets.APIGW_USERNAME }}
           apigw-password: ${{ secrets.APIGW_PASSWORD }}
-          api-name: $(jq '.info.title' swagger.json)
-          api-version: $(jq '.info.version' swagger.json)
+          api-name: ${{ steps.api-info.outputs.api-name }}
+          api-version: ${{ steps.api-info.outputs.api-version }}
           stage-name: staging
           debug: ${{ secrets.ACTIONS_STEP_DEBUG }} 
