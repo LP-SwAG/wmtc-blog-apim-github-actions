@@ -22,3 +22,18 @@ jobs:
           api-spec: swagger.json
           set-active: true
           debug: ${{ secrets.ACTIONS_STEP_DEBUG }}
+
+  promote-to-staging:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v3
+      - uses: jiridj/wm-apigw-actions-promote-api@v1
+        with: 
+          apigw-url: ${{ secrets.APIGW_URL }}
+          apigw-username: ${{ secrets.APIGW_USERNAME }}
+          apigw-password: ${{ secrets.APIGW_PASSWORD }}
+          api-name: $(jq '.info.title' swagger.json)
+          api-version: $(jq '.info.version' swagger.json)
+          stage-name: staging
+          debug: ${{ secrets.ACTIONS_STEP_DEBUG }} 
