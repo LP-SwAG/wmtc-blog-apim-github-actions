@@ -7,6 +7,11 @@ on:
     tags:
       - v*
 
+concurrency:
+  # prevent concurrent executions of this workflow
+  # we need the dev update to complete before promoting 
+  group: ${{ github.workflow }}
+
 jobs:
   update-dev:
     runs-on: ubuntu-latest
