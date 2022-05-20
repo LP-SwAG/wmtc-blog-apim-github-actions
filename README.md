@@ -4,7 +4,7 @@
 [![open issues](https://img.shields.io/github/issues-raw/jiridj/wmtc-blog-apim-github-actions)](https://github.com/jiridj/wmtc-blog-apim-github-actions/issues)
 ![views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjiridj%2Fwmtc-blog-apim-github-actions&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
 
-This is an example of how you can register and promote APIs with [GitHub Actions](https://github.com/features/actions) and [webMethods API Gateway](https://www.softwareag.com/en_corporate/platform/integration-apis/api-management.html). This example comes with my [blog post on TechCommunity](https://tech.forums.softwareag.com/t/using-github-actions-with-webmethods-api-gateway) on the same topic, where you can find more information. 
+This is an example of how you can register and promote APIs with [GitHub Actions](https://github.com/features/actions) and [webMethods API Gateway](https://www.softwareag.com/en_corporate/platform/integration-apis/api-management.html). This example comes with my [blog post on TechCommunity](https://tech.forums.softwareag.com/t/using-github-actions-with-webmethods-api-gateway/257584) on the same topic, where you can find more information. 
 
 ## See it in action!
 
