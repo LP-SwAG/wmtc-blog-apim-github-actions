@@ -51,7 +51,7 @@ jobs:
           apigw-password: ${{ secrets.APIGW_PASSWORD }}
           api-name: ${{ steps.api-info.outputs.api-name }}
           api-version: ${{ steps.api-info.outputs.api-version }}
-          stage-name: staging
+          stage-name: BE_LP_Test
           debug: ${{ secrets.ACTIONS_STEP_DEBUG }} 
 
   promote-to-prod:
@@ -77,5 +77,5 @@ jobs:
           apigw-password: ${{ secrets.APIGW_PASSWORD }}
           api-name: ${{ steps.api-info.outputs.api-name }}
           api-version: ${{ steps.api-info.outputs.api-version }}
-          stage-name: production
+          stage-name: BE_LP_Prod
           debug: ${{ secrets.ACTIONS_STEP_DEBUG }}
