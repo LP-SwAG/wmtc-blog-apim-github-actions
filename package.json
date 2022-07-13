@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiridj/wmtc-blog-apim-github-actions.git"
+    "url": "git+https://github.com/LP-SwAG/wmtc-blog-apim-github-actions.git"
   },
   "keywords": [],
   "author": "Jiri De Jagere <jiridj@gmail.com> (https://jiridj.be/)",
