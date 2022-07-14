@@ -1,6 +1,6 @@
 {
   "name": "wmtc-blog-apim-github-actions",
-  "version": "0.1.13",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
